@@ -21,3 +21,13 @@ The validation set was used for checkpoint selection and is not an independent f
 
 Use the project's existing Windows virtual environment and PowerShell workflow. Review the data split manifest and scripts before reproducing the experiment.
 
+## Live demo
+
+Try the deployed Streamlit application:
+
+https://quantumprot-net-mg-vf785atzjqj5c7vfbfgr9f.streamlit.app/
+
+## Source code
+
+GitHub repository: https://github.com/rtx4070-m4/QuantumProtNet-MG
+
