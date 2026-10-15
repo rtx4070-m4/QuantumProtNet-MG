@@ -9,10 +9,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 import train_quantumprot_hybrid_scaffold as hybrid
 
-CHECKPOINT = (
-    ROOT / "results" / "quantumprot_hybrid_scaffold"
-    / "quantumprot_hybrid_best.pt"
-)
+CHECKPOINT = ROOT / "quantumprot_hybrid_best.pt"
 
 st.set_page_config(
     page_title="QuantumProtNet-MG",
@@ -135,3 +132,4 @@ st.caption(
     "hardware. No quantum advantage, clinical utility, or experimental "
     "accuracy is claimed. Performance on new proteins is not guaranteed."
 )
+

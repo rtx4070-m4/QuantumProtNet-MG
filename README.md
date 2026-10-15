@@ -1,4 +1,4 @@
-# QuantumProtNet-MG
+﻿# QuantumProtNet-MG
 
 An experimental protein-stability prediction project comparing a custom neural sequence encoder with a small differentiable statevector-simulator branch against a classical projection control.
 
@@ -11,7 +11,7 @@ An experimental protein-stability prediction project comparing a custom neural s
 
 ## Key result
 
-The hybrid model achieved lower mean name-derived scaffold-held-out validation MAE than the classical projection control across the three evaluated seeds. See `results/scaffold_final_report/RESULTS_REPORT.md` for all metrics and limitations.
+The hybrid model achieved lower mean name-derived scaffold-held-out validation MAE than the classical projection control across the three evaluated seeds. See `docs/RESULTS_REPORT.md` for all metrics and limitations.
 
 ## Experimental caution
 
@@ -20,3 +20,4 @@ The validation set was used for checkpoint selection and is not an independent f
 ## Run environment
 
 Use the project's existing Windows virtual environment and PowerShell workflow. Review the data split manifest and scripts before reproducing the experiment.
+
