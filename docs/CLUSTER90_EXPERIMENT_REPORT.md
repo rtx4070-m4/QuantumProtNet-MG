@@ -1,4 +1,4 @@
-# QuantumProtNet-MG: Cluster-Aware Validation Experiment
+﻿# QuantumProtNet-MG: Cluster-Aware Validation Experiment
 
 Report generated (UTC): 2026-10-21T11:15:07+00:00
 
@@ -23,7 +23,8 @@ These descriptive results do not establish statistical significance, quantum adv
 
 ## 3. Data split and similarity audit
 
-- Manifest: `results\sequence_similarity_audit_v2\cluster90_cov80_cluster_heldout_split_seed20261021.csv`
+- Manifest: `results/sequence_similarity_audit_v2/cluster90_cov80_cluster_heldout_split_seed20261021.csv`
+- The published manifest contains split metadata only; raw amino-acid sequences are excluded.
 - The split was generated using MMseqs2 clustering at 90% sequence identity and 80% coverage settings.
 - The cluster-aware partition audit reported zero cluster IDs crossing between the development training and validation partitions.
 - The validation proportion was approximately 20%.
@@ -73,11 +74,11 @@ This is preliminary comparative evidence for these implementations and this fixe
 
 - Per-run metrics, checkpoints, and training histories are stored in their respective `results/cluster90_*_seed*` directories.
 - Aggregate CSV/JSON files are stored in `results/`.
-- SHA-256 integrity manifest: `results\cluster90_sha256_manifest.csv`.
-- Number of existing artifacts hashed: 30.
+- Package SHA-256 manifest: `results/cluster90_package_sha256_manifest.csv`. It covers the listed package files and excludes itself.
 
 SHA-256 hashes identify the exact files present at report generation time; they do not by themselves prove scientific validity or that a run can be reproduced on different hardware/software.
 
 ## 8. Suggested reporting statement
 
 "Across three training seeds on a fixed cluster-aware validation split, the simulator-based hybrid model showed a small improvement in mean validation metrics over the classical projection ablation, with greater run-to-run variability. The observed differences are descriptive and do not establish statistical significance or quantum advantage. Validation was used for checkpoint selection, and cross-partition sequence-similarity hits were observed in a separate MMseqs2 audit."
+

@@ -1,4 +1,4 @@
-import csv
+﻿import csv
 import json
 import os
 import re
@@ -85,7 +85,7 @@ def load_controlled_splits():
 
             row = candidates.pop(match_index)
 
-            partition = item.get("cluster_partition", item["partition"])
+            partition = item["cluster_partition"] if "cluster_partition" in item else item["partition"]
             if partition in ("cluster_development_train", "development_train"):
                 train_rows.append(row)
             elif partition in ("cluster_heldout_validation", "group_heldout_validation"):
@@ -571,3 +571,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

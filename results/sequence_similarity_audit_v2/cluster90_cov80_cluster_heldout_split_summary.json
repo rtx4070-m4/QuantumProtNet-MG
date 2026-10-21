@@ -1,0 +1,17 @@
+{
+  "seed": 20261021,
+  "identity_threshold": 0.9,
+  "coverage_threshold": 0.8,
+  "cluster_assignment_method": "MMseqs2 easy-cluster; cluster-mode 0",
+  "target_validation_fraction": 0.2,
+  "total_records": 53484,
+  "total_clusters": 39694,
+  "training_records": 42787,
+  "validation_records": 10697,
+  "actual_validation_fraction": 0.20000373943609304,
+  "training_clusters": 35143,
+  "validation_clusters": 4551,
+  "clusters_crossing_new_partitions": 0,
+  "output_file": "results\\sequence_similarity_audit_v2\\cluster90_cov80_cluster_heldout_split_seed20261021.csv",
+  "caveat": "A cluster-aware split at 90% identity/80% coverage does not guarantee absence of all cross-partition similarities below that threshold; run a cross-partition similarity audit before interpreting model performance."
+}

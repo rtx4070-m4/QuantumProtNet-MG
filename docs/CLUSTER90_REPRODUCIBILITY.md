@@ -18,10 +18,7 @@ documented in `RESULTS_REPORT.md` and `REPRODUCIBILITY.md`.
 - Validation metrics are not an independent final-test estimate because
   validation performance was used for checkpoint selection.
 
-The split manifest used in the experiment was
-`results/sequence_similarity_audit_v2/cluster90_cov80_cluster_heldout_split_seed20261021.csv`
-in the original working environment. The sequence-level manifest is not
-included in this repository package.
+The cluster-aware split manifest is included at `results/sequence_similarity_audit_v2/cluster90_cov80_cluster_heldout_split_seed20261021.csv`. The published copy contains row identifiers, labels, lengths, parent identifiers, cluster IDs and partition labels; raw amino-acid sequence strings are excluded.
 
 ## 3. Split integrity and limitations
 
@@ -89,6 +86,13 @@ The original run manifest was stored outside this repository package. The
 commands below are templates; they are not directly executable until the
 dataset, manifest, Python environment, and dependencies have been configured.
 
+### Dataset input expected by the scripts
+
+`src/train_classical_baseline.py` reads `data/raw/hf_mirror/train.csv`. The `data/` directory is gitignored, so dataset files are not published with this code.
+
+The CSV must contain at least `name`, `aa_seq`, `protein_length`, `parent`, and `label`. Use the same processed dataset version that was used to create the split manifest. The manifest contains 53,484 assigned records: 42,787 training and 10,697 validation. Only rows matched to manifest entries are used by these runs.
+
+The original TAPE data repository is available at https://github.com/songlab-cal/tape-neurips2019. A CSV mirror is listed at https://huggingface.co/datasets/AI4Protein/TAPE_Stability. Do not assume a different mirror is identical: verify names, lengths, labels, and parent identifiers against the manifest before treating it as an exact reproduction.
 ## 7. Windows PowerShell command templates
 
 Run commands from the repository root after setting `$manifest` to the
@@ -97,7 +101,7 @@ Python environment. Ensure the dataset expected by the training scripts is
 available before running.
 
 ```powershell
-$manifest = "C:\PATH\TO\cluster90_cov80_cluster_heldout_split_seed20261021.csv"
+$manifest = ".\results\sequence_similarity_audit_v2\cluster90_cov80_cluster_heldout_split_seed20261021.csv"
 
 $env:QP_MANIFEST = $manifest
 $env:QP_SEED = "42"
@@ -162,3 +166,4 @@ published package files.
 - The simulator is classical software, not quantum hardware.
 - Neither a statistically significant improvement nor quantum advantage
   has been established by this experiment.
+
