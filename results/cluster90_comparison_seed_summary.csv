@@ -1,0 +1,7 @@
+﻿model,seed,MAE,RMSE,Pearson_r,best_epoch,train_rows,validation_rows,trainable_parameters,peak_gpu_memory_MiB,metrics_file,evaluation_split
+hybrid,42,0.365761935710907,0.47210144996643066,0.6791277527809143,12,42787,10697,17376,28.888671875,results\cluster90_hybrid_seed42\quantumprot_hybrid_metrics.json,validation_only
+classical,42,0.37085211277008057,0.4768974483013153,0.6727483868598938,15,42787,10697,17360,28.875,results\cluster90_classical_seed42\classical_projection_ablation_metrics.json,validation_only
+hybrid,123,0.3714253604412079,0.47866180539131165,0.6750226020812988,6,42787,10697,17376,28.888671875,results\cluster90_hybrid_seed123\quantumprot_hybrid_metrics.json,validation_only
+classical,123,0.3752795159816742,0.4807319939136505,0.6627557873725891,6,42787,10697,17360,28.875,results\cluster90_classical_seed123\classical_projection_ablation_metrics.json,validation_only
+hybrid,2026,0.3743423819541931,0.48073136806488037,0.6581712365150452,9,42787,10697,17376,28.888671875,results\cluster90_hybrid_seed2026\quantumprot_hybrid_metrics.json,validation_only
+classical,2026,0.3721792697906494,0.4772492051124573,0.673306405544281,10,42787,10697,17360,28.875,results\cluster90_classical_seed2026\classical_projection_ablation_metrics.json,validation_only

@@ -1,0 +1,121 @@
+{
+  "experiment": "QuantumProtNet-MG cluster-aware development comparison",
+  "split_manifest": "results/sequence_similarity_audit_v2/cluster90_cov80_cluster_heldout_split_seed20261021.csv",
+  "evaluation_scope": "Validation only; official test set not loaded by these runs",
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "models": [
+    {
+      "model": "hybrid",
+      "number_of_seeds": 3,
+      "MAE_mean": 0.37050989270210266,
+      "MAE_sample_sd": 0.004362863202013971,
+      "MAE_min": 0.365761935710907,
+      "MAE_max": 0.3743423819541931,
+      "RMSE_mean": 0.4771648744742076,
+      "RMSE_sample_sd": 0.004505493671555206,
+      "RMSE_min": 0.47210144996643066,
+      "RMSE_max": 0.48073136806488037,
+      "Pearson_r_mean": 0.6707738637924194,
+      "Pearson_r_sample_sd": 0.01110552683513717,
+      "Pearson_r_min": 0.6581712365150452,
+      "Pearson_r_max": 0.6791277527809143
+    },
+    {
+      "model": "classical",
+      "number_of_seeds": 3,
+      "MAE_mean": 0.3727702995141347,
+      "MAE_sample_sd": 0.0022721051692295704,
+      "MAE_min": 0.37085211277008057,
+      "MAE_max": 0.3752795159816742,
+      "RMSE_mean": 0.47829288244247437,
+      "RMSE_sample_sd": 0.002119641901398322,
+      "RMSE_min": 0.4768974483013153,
+      "RMSE_max": 0.4807319939136505,
+      "Pearson_r_mean": 0.6696035265922546,
+      "Pearson_r_sample_sd": 0.005936875906437694,
+      "Pearson_r_min": 0.6627557873725891,
+      "Pearson_r_max": 0.673306405544281
+    }
+  ],
+  "paired_seed_comparisons": [
+    {
+      "seed": 42,
+      "hybrid_MAE": 0.365761935710907,
+      "classical_MAE": 0.37085211277008057,
+      "classical_minus_hybrid_MAE": 0.005090177059173584,
+      "hybrid_MAE_improvement_percent": 1.3725625077749988,
+      "hybrid_RMSE": 0.47210144996643066,
+      "classical_RMSE": 0.4768974483013153,
+      "classical_minus_hybrid_RMSE": 0.0047959983348846436,
+      "hybrid_Pearson_r": 0.6791277527809143,
+      "classical_Pearson_r": 0.6727483868598938,
+      "hybrid_minus_classical_Pearson_r": 0.006379365921020508
+    },
+    {
+      "seed": 123,
+      "hybrid_MAE": 0.3714253604412079,
+      "classical_MAE": 0.3752795159816742,
+      "classical_minus_hybrid_MAE": 0.0038541555404663086,
+      "hybrid_MAE_improvement_percent": 1.027009302755154,
+      "hybrid_RMSE": 0.47866180539131165,
+      "classical_RMSE": 0.4807319939136505,
+      "classical_minus_hybrid_RMSE": 0.002070188522338867,
+      "hybrid_Pearson_r": 0.6750226020812988,
+      "classical_Pearson_r": 0.6627557873725891,
+      "hybrid_minus_classical_Pearson_r": 0.012266814708709717
+    },
+    {
+      "seed": 2026,
+      "hybrid_MAE": 0.3743423819541931,
+      "classical_MAE": 0.3721792697906494,
+      "classical_minus_hybrid_MAE": -0.002163112163543701,
+      "hybrid_MAE_improvement_percent": -0.581201678632034,
+      "hybrid_RMSE": 0.48073136806488037,
+      "classical_RMSE": 0.4772492051124573,
+      "classical_minus_hybrid_RMSE": -0.0034821629524230957,
+      "hybrid_Pearson_r": 0.6581712365150452,
+      "classical_Pearson_r": 0.673306405544281,
+      "hybrid_minus_classical_Pearson_r": -0.01513516902923584
+    }
+  ],
+  "paired_summary": {
+    "classical_minus_hybrid_MAE": {
+      "mean": 0.002260406812032064,
+      "sample_sd": 0.0038804094364043606,
+      "min": -0.002163112163543701,
+      "max": 0.005090177059173584
+    },
+    "classical_minus_hybrid_RMSE": {
+      "mean": 0.001128007968266805,
+      "sample_sd": 0.004218739944820466,
+      "min": -0.0034821629524230957,
+      "max": 0.0047959983348846436
+    },
+    "hybrid_MAE_improvement_percent": {
+      "mean": 0.6061233772993729,
+      "sample_sd": 1.0426683776286498,
+      "min": -0.581201678632034,
+      "max": 1.3725625077749988
+    },
+    "seeds_where_hybrid_MAE_is_lower": 2,
+    "seeds_where_classical_MAE_is_lower": 1,
+    "ties_on_MAE": 0
+  },
+  "interpretation_cautions": [
+    "Three seeds are descriptive evidence, not a statistical significance test.",
+    "All seeds use the same fixed development/validation split.",
+    "The hybrid model uses a classical simulator; no quantum hardware or quantum advantage is demonstrated.",
+    "The validation set is used for checkpoint selection, so these metrics are not an independent final test estimate.",
+    "The split has no cluster IDs crossing partitions, but a separate MMseqs2 audit found some cross-partition sequence-similarity hits."
+  ],
+  "files": {
+    "runs": "results\\cluster90_comparison_seed_summary.csv",
+    "models": "results\\cluster90_model_summary.csv",
+    "paired": "results\\cluster90_paired_seed_comparison.csv",
+    "json": "results\\cluster90_comparison_summary.json"
+  }
+}
